@@ -17,8 +17,8 @@ RUN sed -i 's/^UsePAM yes$/UsePAM no/' /etc/ssh/sshd_config
 
 RUN echo "root:Admin12345" | chpasswd
 
-RUN useradd -u 1000 -m student -p student
-
+RUN useradd -u 1000 -m student
+RUN echo "student:student" | chpasswd
 RUN usermod -aG wheel student
 
 # Instsall python3.8
